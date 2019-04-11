@@ -1,0 +1,1 @@
+print(sum([s for s in range(1000) if s%3 == 0 or s%5 == 0]))
