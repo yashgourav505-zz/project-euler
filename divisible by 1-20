@@ -1,0 +1,1 @@
+This problem isn't actually a coding problem - It's required to find the lowest common multiple of all the number between 1 and 20. This can be done by investigating the total number of powers of primes of each number: for example, the largest power of 2 is 16, so we have 2^4. This gives us (2^4)*(3^2)*(5*7*11*13*17*19) = 232792560.
