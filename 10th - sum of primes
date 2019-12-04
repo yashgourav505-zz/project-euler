@@ -1,0 +1,20 @@
+import math
+def findprimes(n): #find primes under n
+    isprime = [True for i in range(n+1)]
+    p = 2
+    for i in range(2,len(isprime)):
+        if i**2 > n+1:
+            break
+        if isprime[i] == False:
+            pass
+        else:
+            p = i
+            for j in range(p**2,len(isprime),p):
+                isprime[j] = False
+             
+    primes = []
+    for i in range(len(isprime)):
+        if isprime[i] == True:
+            primes.append(i)
+    return primes[2:]
+print sum(findprimes(2000000))
