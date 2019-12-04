@@ -1,0 +1,21 @@
+def one(n):
+    if n%2 == 0:
+        return n/2
+    else:
+        return 3*n+1
+vals = [0,0]
+largest = 0
+largestval = 0
+current = 2
+while len(vals) <= 1000000:
+    tmp = current
+    iterations = 0
+    while tmp >= current:
+        tmp = one(tmp)
+        iterations+=1
+    vals.append(vals[tmp]+iterations)
+    if vals[tmp]+iterations > largestval:
+        largestval = vals[tmp]+iterations
+        largest = current
+    current+=1
+print largest
