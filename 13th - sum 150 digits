@@ -1,0 +1,9 @@
+f = open("Number 13.txt", "r")
+a = f.readlines()
+f.close()
+b = []
+for val in a:
+    b.append(int(val[:13]))
+print str(sum(b))[:10]
+
+# numbers are to be read from txt file
