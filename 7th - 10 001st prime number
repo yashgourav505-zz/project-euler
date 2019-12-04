@@ -1,0 +1,23 @@
+'''
+This can be easily done with a sieve and finding a reasonable approximation to the 10000th prime using the prime number theorem, which estimates the number of primes under n to be around n/ln(n); solving, we get around 120,000, and since PNT estimates are above, we simply use that number.
+'''
+
+def findprimes(n): #find primes under n
+    isprime = [True for i in range(n+1)]
+    p = 2
+    for i in range(2,len(isprime)):
+        if i**2 > n+1:
+            break
+        if isprime[i] == False:
+            pass
+        else:
+            p = i
+            for j in range(p**2,len(isprime),p):
+                isprime[j] = False
+             
+    primes = []
+    for i in range(len(isprime)):
+        if isprime[i] == True:
+            primes.append(i)
+    return primes[2:]
+print findprimes(120000)[10000]
