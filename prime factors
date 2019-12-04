@@ -1,0 +1,19 @@
+import math
+
+def prime(n):
+    if n<=1:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
+largest = 0
+n = 3
+value = 600851475143
+while value>=n:
+    if prime(n) and value%n == 0:
+        while value%n == 0:
+            value = value/n
+        largest = k#Note that we do not need to check if largest is greater than k.
+    n+=1
+print largest
