@@ -1,0 +1,19 @@
+tri = 1
+import math
+while True:
+    factors = []
+    tmp = tri*(tri+1)/2
+    div = 2
+    while tmp>1: #This code gets the prime factorization
+        factors.append(0)
+        while tmp%div == 0:
+            factors[-1]+=1
+            tmp = tmp/div
+        div+=1
+    factor = 1
+    for i in range(len(factors)):
+        factor*=(factors[i]+1)
+    if factor>=500:
+        print tri*(tri+1)/2
+        break
+    tri+=1
